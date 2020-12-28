@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=.0">
+    <title>计算器</title>
+    <style>
+        button{
+            width: 50px;
+            height:50px;
+        }
+    </style>
+     <script type="text/javascript">
+        var numresult;
+        var str;
+         function onclicknum(nums) {
+    
+          str = document.getElementById("result");
+           str.value = str.value + nums;
+   
+         }
+    
+       function onclickclear() {
+   
+             str = document.getElementById("result");
+             str.value = "";
+     
+        }
+   
+        function onclickresult() {
+    
+            str = document.getElementById("result");
+            numresult = eval(str.value);
+            str.value = numresult.toFixed(2);
+            
+        }
+        function onclicksqrt() {
+      str = document.getElementById("result");
+      numresult = Math.sqrt(str.value);
+      str.value = numresult.toFixed(2);
+      }
+      var flag=false;
+      var num1;
+      var num2;
+      function onclickx2() {
+      str = document.getElementById("result");
+      numresult = str.value*str.value;
+      str.value = numresult.toFixed(2);
+      }
+      function onclicksin() {
+      str = document.getElementById("result");
+      numresult = Math.sin(str.value/180*Math.PI);
+      str.value = numresult.toFixed(2);
+    }
+    function onclickcos() {
+      str = document.getElementById("result");
+      numresult = Math.cos(str.value/180*Math.PI);
+      str.value = numresult.toFixed(2);
+    }
+    function onclicktan() {
+      str = document.getElementById("result");
+      numresult = Math.tan(str.value/180*Math.PI);
+      str.value = numresult.toFixed(2);
+    }
+    function onclickasin() {
+      str = document.getElementById("result");
+      numresult = Math.asin(str.value);
+      str.value = (numresult*180).toFixed(2);
+    }
+    </script>
+</head>
+<body >
+    <center>
+      <div>
+          <div >
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="text" style=" width: 200px;height: 30px;" id="result">
+          </div>
+          <div>
+           <ul>
+               <li>
+                <button type="button"  value="+" id="+" onclick="onclicknum('+')">+</button>
+                <button type="button"  value="-" id="-" onclick="onclicknum('-')">-</button>
+                <button type="button"  value="*" id="*" onclick="onclicknum('*')" >*</button>
+                <button type="button"  value="/" id="/" onclick="onclicknum('/')" >/</button>
+               </li>
+               <li>
+                <button type="button"   value="1" id="1" onclick="onclicknum(1)">1</button>
+                <button type="button"   value="2" id="2" onclick="onclicknum(2)">2</button>
+                <button type="button"   value="3" id="3" onclick="onclicknum(3)">3</button>
+                <button type="button"   value="4" id="4" onclick="onclicknum(4)">4</button>
+            </li>
+            <li>
+                <button type="button"    value="5" id="5" onclick="onclicknum(5)" >5</button>
+                <button type="button"    value="6" id="6" onclick="onclicknum(6)" >6</button>
+                <button type="button"    value="7" id="7" onclick="onclicknum(7)">7</button>
+                <button type="button"    value="8" id="8" onclick="onclicknum(8)">8</button>
+            </li>
+            <li>
+                <button type="button"    value="9" id="9" onclick="onclicknum(9)">9</button>
+                <button type="button"    value="0" id="0" onclick="onclicknum(0)">0</button>
+                <button type="button"    value="=" id="=" onclick="onclickresult()">=</button>
+                <button type="button"    value="C" id="C" onclick="onclickclear()">C</button>
+            </li>
+            <li>
+                <button type="button" value="PI" id="PI" onclick="onclicknum(Math.PI)">PI</button>
+                <button type="button" value="e" id="e" onclick="onclicknum(Math.E)">e</em></button>
+                <button type="button" value="sqrt" id="sqrt" onclick="onclicksqrt()">sqrt</button>
+                <button type="button" value="i/x" id="i/x" onclick="onclickx2()">x∧2</button>
+            </li>
+            <li>
+                <button type="button"  value="sin" id="sin" onclick="onclicksin()">sin</button>
+                <button type="button"  value="cos" id="cos" onclick="onclickcos()">cos</button>
+                <button type="button"  value="tan" id="tan" onclick="onclicktan()" >tan</button>
+                <button type="button"  value="asin" id="asin" onclick="onclickasin()">asin</button>
+            </li>
+           </ul>
+        </div>
+      </div>
+    </center>
+</body>
+</html>
